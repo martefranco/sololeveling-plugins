@@ -1,0 +1,15 @@
+{
+  "name": "sololeveling-plugins",
+  "owner": {
+    "name": "Martin Eduardo Jimenez Franco",
+    "email": "martn00@hotmail.com"
+  },
+  "plugins": [
+    {
+      "name": "talent-mx3",
+      "source": "./plugins/talent-mx3",
+      "description": "Sistema de Talent Acquisition para el mercado mexicano. Crea perfiles de puesto, ofertas de empleo por plataforma, y guias de evaluacion con validacion legal (LFT, NOM-035, STPS).",
+      "category": "human-resources"
+    }
+  ]
+}
