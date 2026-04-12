@@ -6,17 +6,11 @@ Tabla de contenidos de la base de conocimiento. Las skills consultan este archiv
 
 ---
 
-## CONOCIMIENTO SECTORIAL
+## SECTORES
 
-### TI / Servicios Externalizados (`sectores/ti-servicios/`) — Código SS: 01
-
-| Código AA | Archivo | Contenido | Última actualización |
-|-----------|---------|-----------|---------------------|
-| — | `industria.md` | Descripción del sector, indicadores, empresas representativas, retos de contratación | seed |
-| 01 | `areas/atencion-cliente.md` | Roles de atención al cliente: Asesor de Soporte, Gestor de Servicio, Supervisor | seed |
-| 02 | `areas/operaciones-campo.md` | Roles de campo: Técnico de Soporte, Coordinador de Campo | seed |
-| — | `competencias/tecnicas/soporte-cliente.md` | Competencias técnicas para roles de soporte al cliente | seed |
-| — | `competencias/tecnicas/campo-telecom.md` | Competencias técnicas para técnicos de campo en telecomunicaciones | seed |
+> No hay sectores precargados. Ejecuta `/poblar-ontologia` para construir el conocimiento de tu primera industria.
+>
+> Los archivos de TI/Servicios Externalizados están disponibles como ejemplo de referencia en `${CLAUDE_PLUGIN_ROOT}/data/seed/ontologia/sectores/ti-servicios/` — nunca se copian al workspace.
 
 ---
 
@@ -42,4 +36,4 @@ Tabla de contenidos de la base de conocimiento. Las skills consultan este archiv
 
 ## NOTA
 
-Los códigos SS (sector) y AA (área) se asignan aquí y se replican en `data/registro.md`. Al agregar nuevos sectores o áreas, actualizar AMBOS archivos.
+Los códigos SS (sector) y AA (área) se asignan aquí y se replican en `data/registro.md`. Al agregar nuevos sectores o áreas vía `/poblar-ontologia`, actualizar AMBOS archivos.

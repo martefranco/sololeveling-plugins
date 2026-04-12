@@ -46,3 +46,5 @@
 - **Variación** (código 01-03-01-01): el contexto específico de tu contratación — equipo, jefe directo, métricas a 30/90 días, salario y condiciones.
 
 El validador legal encontró 0 errores y 1 recomendación. ¿Quieres revisarlos?"
+
+> **Nota:** Los códigos `01-03-01` y `01-03-01-01` en este ejemplo son ilustrativos del formato SS-AA-PP-VV. Los códigos reales dependen de los sectores y áreas registrados en `data/registro.md` de tu workspace.

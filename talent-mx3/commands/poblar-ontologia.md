@@ -1,6 +1,6 @@
 ---
 description: "Cargar conocimiento de industria a la ontologia"
-allowed-tools: Read, Write, Edit, Glob, Grep
+allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, WebFetch
 ---
 
 Guiar al usuario en la construcción intencional de conocimiento para la ontología de talent-mx3.
@@ -9,6 +9,9 @@ Lee `${CLAUDE_PLUGIN_ROOT}/skills/constructor-ontologia/SKILL.md` y sigue el flu
 
 Pasos:
 1. Verificar que existe `data/ontologia/`. Si no existe, sugerir ejecutar `/inicializar-talent-mx3` primero.
+1b. Verificar si `data/ontologia/sectores/` está vacío usando Glob `data/ontologia/sectores/*/industria.md`.
+   - Si no hay resultados → activar **Modo A: Primer Sector Guiado** del skill `constructor-ontologia`. Saltar directamente al flujo guiado del skill — NO continuar a los pasos 2-12.
+   - Si hay resultados → continuar al paso 2 (flujo normal).
 2. Leer `data/ontologia/indice.md` para saber qué ya existe.
 3. Leer `data/registro.md` para conocer los códigos SS y AA ya asignados.
 4. Leer `${CLAUDE_PLUGIN_ROOT}/skills/constructor-ontologia/references/estructura-ontologia.md` para conocer los formatos.

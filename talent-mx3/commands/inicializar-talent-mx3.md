@@ -1,11 +1,11 @@
 ---
-description: "Crear estructura de carpetas y ontologia seed"
+description: "Crear estructura de carpetas y conocimiento común"
 allowed-tools: Read, Write, Edit, Bash(mkdir:*,cp:*,ls:*), Glob
 ---
 
 Inicializar la estructura de datos de talent-mx3 en la carpeta de trabajo del usuario.
 
-Este comando se ejecuta una sola vez al empezar a usar el plugin. Crea las carpetas y archivos necesarios para que las skills funcionen.
+Este comando se ejecuta una sola vez al empezar a usar el plugin. Crea las carpetas y archivos necesarios para que las skills funcionen. Solo instala el conocimiento común (universal para cualquier industria mexicana). Los sectores se construyen después con `/poblar-ontologia`.
 
 Pasos:
 
@@ -18,11 +18,7 @@ Pasos:
    data/
    ├── registro.md
    ├── ontologia/
-   │   ├── sectores/
-   │   │   └── ti-servicios/
-   │   │       ├── areas/
-   │   │       └── competencias/
-   │   │           └── tecnicas/
+   │   ├── sectores/                        ← Vacío — se puebla con /poblar-ontologia
    │   └── comun/
    │       ├── competencias/
    │       │   ├── conductuales/
@@ -34,13 +30,8 @@ Pasos:
    ```
 
 3. Copiar los archivos seed desde `${CLAUDE_PLUGIN_ROOT}/data/seed/ontologia/` a `data/ontologia/`.
-   Archivos seed incluidos:
-   - `indice.md` — Tabla de contenidos de la ontología (con códigos SS-AA)
-   - `sectores/ti-servicios/industria.md` — Sector de servicios externalizados
-   - `sectores/ti-servicios/areas/atencion-cliente.md` — Roles de atención al cliente
-   - `sectores/ti-servicios/areas/operaciones-campo.md` — Roles de campo
-   - `sectores/ti-servicios/competencias/tecnicas/soporte-cliente.md` — Competencias técnicas de soporte
-   - `sectores/ti-servicios/competencias/tecnicas/campo-telecom.md` — Competencias de telecomunicaciones
+   Archivos seed incluidos (solo conocimiento común):
+   - `indice.md` — Tabla de contenidos de la ontología
    - `comun/competencias/conductuales/catalogo.md` — Competencias conductuales universales
    - `comun/competencias/certificaciones/regulatorias.md` — DC-3, NOM-035, STPS
    - `comun/herramientas/gestion-clientes.md` — CRMs y ticketing
@@ -48,15 +39,18 @@ Pasos:
    - `comun/herramientas/plataformas.md` — Marketplaces y e-commerce
    - `comun/herramientas/regulatorias.md` — SAT, IMSS, SUA
 
+   NO copiar archivos de `sectores/` — los sectores se construyen con `/poblar-ontologia`.
+
 4. Copiar `${CLAUDE_PLUGIN_ROOT}/data/seed/registro.md` a `data/registro.md`.
 
 5. Presentar resumen:
    "Estructura de talent-mx3 creada. Tienes:
-   - Ontología seed con el sector TI/Servicios Externalizados (código 01)
-   - Áreas precargadas: Atención al Cliente (01-01) y Operaciones de Campo (01-02)
-   - Conocimiento común del mercado mexicano (regulaciones, herramientas, competencias)
+   - Conocimiento común del mercado mexicano (regulaciones, herramientas, competencias conductuales)
    - Registro de códigos SS-AA-PP-VV listo para usar
    - Carpetas de perfiles, variaciones y ofertas listas
 
-   Para empezar: ejecuta /crear-perfil para crear tu primer perfil de puesto.
-   Si quieres cargar otra industria: ejecuta /poblar-ontologia."
+   **Siguiente paso obligatorio:** ejecuta `/poblar-ontologia` para construir el conocimiento de tu industria antes de crear perfiles."
+
+6. Verificar si `data/ontologia/sectores/` está vacío usando Glob `data/ontologia/sectores/*/industria.md`.
+   - Si no hay resultados → mostrar: "No tienes sectores cargados aún. Ejecuta `/poblar-ontologia` para construir el conocimiento de tu industria. El sistema te guiará paso a paso con ejemplos."
+   - Si hay resultados → no mostrar nada adicional.

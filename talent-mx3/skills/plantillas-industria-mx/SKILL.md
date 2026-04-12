@@ -18,6 +18,8 @@ Proveer templates de roles pre-configurados para el mercado mexicano que sirvan 
 
 ## Templates disponibles
 
+> **Nota:** Los 3 templates incluidos (`asesor-soporte-cliente.md`, `tecnico-campo.md`, `analista-administrativo.md`) son del sector TI/Servicios Externalizados. Para otras industrias, sirven como referencia de FORMATO y estructura — muestran cómo debe verse un template completo. Se pueden crear templates adicionales para cualquier sector vía `/poblar-ontologia`.
+
 Los templates están en `references/templates/`. Cada template incluye:
 - 8-10 competencias técnicas con nivel esperado
 - 5 competencias conductuales priorizadas

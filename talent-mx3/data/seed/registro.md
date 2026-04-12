@@ -26,7 +26,7 @@ Tabla maestra de asignación de códigos SS-AA-PP-VV. Consultar SIEMPRE antes de
 
 | Código | Slug ontología | Nombre | Fecha |
 |--------|---------------|--------|-------|
-| 01 | ti-servicios | TI / Servicios Externalizados | seed |
+| — | — | (sin sectores registrados) | — |
 
 ---
 
@@ -34,8 +34,7 @@ Tabla maestra de asignación de códigos SS-AA-PP-VV. Consultar SIEMPRE antes de
 
 | Código | Sector | Slug ontología | Nombre | Fecha |
 |--------|--------|---------------|--------|-------|
-| 01-01 | 01 | atencion-cliente | Atención al Cliente / Soporte | seed |
-| 01-02 | 01 | operaciones-campo | Operaciones de Campo | seed |
+| — | — | — | (sin áreas registradas) | — |
 
 ---
 

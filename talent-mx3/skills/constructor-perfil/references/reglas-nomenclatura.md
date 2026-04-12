@@ -53,7 +53,9 @@ Ejemplo: `01-03-01-00-especialista-ia-llm--linkedin.md`
 
 ## Mapeo con ontología
 
-Los códigos de sector (SS) y área (AA) se corresponden con la estructura de la ontología:
+Los códigos de sector (SS) y área (AA) se corresponden con la estructura de la ontología.
+
+> **Nota:** Los códigos en estas tablas son EJEMPLOS ILUSTRATIVOS del sector TI/Servicios Externalizados, incluido como referencia en el plugin. No representan necesariamente datos existentes en tu workspace. Consulta siempre `data/registro.md` para los códigos reales de tu proyecto.
 
 | Código SS | Carpeta ontología |
 |-----------|-------------------|
