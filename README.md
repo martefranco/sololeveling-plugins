@@ -1,34 +1,56 @@
 # SoloLeveling Plugins
 
-Marketplace de plugins para Claude Code / Cowork por Mainbit.
+Marketplace de plugins para Claude Code / Cowork por **Mainbit**.
+Agentes especializados que convierten conversaciones en flujos de trabajo de reclutamiento estructurados.
 
-## Plugins disponibles
+---
 
-| Plugin | Version | Descripcion |
+## 📦 Plugins disponibles
+
+| Plugin | Versión | Descripción |
 |--------|---------|-------------|
-| talent-mx3 | 3.0.0 | Sistema de Talent Acquisition para el mercado mexicano |
+| **talent-mx3** | 4.0.0 | Pipeline completo de Talent Acquisition para México: Intake → Perfiles → Variaciones → Ofertas → Evaluaciones |
 
-## Instalacion
+---
+
+## ⚡ Instalación
 
 ```bash
 /plugin marketplace add martefranco/sololeveling-plugins
 /plugin install talent-mx3@sololeveling-plugins
 ```
 
-## talent-mx3
+---
 
-Skills de reclutamiento y talent management especializadas para Mexico:
+## 🎯 talent-mx3 — Capacidades principales
 
-- **constructor-perfil**: Intake Meeting digitalizado para definir perfiles de puesto
-- **generador-oferta**: Ofertas de empleo adaptadas por plataforma (OCC, LinkedIn, Computrabajo, Indeed)
-- **constructor-evaluacion**: Guias de entrevista con scorecard y preguntas STAR
-- **benchmark-salarial-mx**: Rangos salariales por zona, industria y experiencia
-- **validador-legal-mx**: Compliance con LFT, NOM-035, STPS
-- **plantillas-industria-mx**: Templates de roles por industria mexicana
-- **generador-persona-candidato**: Retrato del candidato ideal para sourcing
-- **constructor-ontologia**: Base de conocimiento de competencias y herramientas
-- **enriquecedor-ontologia**: Enriquecimiento automatico durante conversaciones
+### 📋 Perfiles
+Conduce un Intake Meeting digitalizado y genera perfiles de puesto completos con variaciones por seniority, área o industria.
+
+### 📝 Ofertas
+Redacta ofertas de empleo adaptadas al tono y formato de cada plataforma: OCC, LinkedIn, Computrabajo, Indeed.
+
+### 🎯 Evaluación
+Crea guías de entrevista con preguntas STAR, scorecards y criterios de decisión listos para usar.
+
+### 📊 Ontología
+Construye y enriquece una base de conocimiento de competencias y herramientas propia del negocio.
+
+### ⚖️ Compliance
+Valida posiciones contra LFT, NOM-035 y lineamientos STPS. Incluye benchmark salarial por zona e industria.
+
+---
+
+## 🗂 Historial de versiones
+
+| Versión | Cambios |
+|---------|---------|
+| **4.0.0** | Jerarquía unificada de datos — modelo canónico compartido entre todas las skills |
+| 3.1.0 | Inicialización agnóstica de industria |
+| 3.0.0 | Release inicial marketplace |
+
+---
 
 ## Licencia
 
-Propiedad de Mainbit.
+Propiedad de **Mainbit**. Todos los derechos reservados.

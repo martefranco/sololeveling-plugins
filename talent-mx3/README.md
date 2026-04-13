@@ -1,95 +1,127 @@
-# talent-mx3
+# talent-mx3 ![v4.0.0](https://img.shields.io/badge/version-4.0.0-blue)
 
-Sistema de Talent Acquisition potenciado por IA para el mercado mexicano.
+> Sistema de Talent Acquisition potenciado por IA para el mercado mexicano.
 
-## Qué hace
+Digitaliza el **Intake Meeting** — el proceso consultivo donde se define lo que el negocio realmente necesita antes de buscar candidatos. No empieza por el título de puesto; empieza por el problema de negocio. Genera perfiles, variaciones y ofertas con herencia automática y validación legal MX integrada.
 
-talent-mx3 digitaliza y potencia el **Intake Meeting** — el proceso consultivo donde se define lo que realmente necesita el negocio antes de buscar candidatos. No empieza pidiendo un título de puesto; empieza preguntando qué problema de negocio se quiere resolver.
+---
 
-## Componentes
+## 🚀 Primeros pasos
 
-### Commands (lo que el usuario ejecuta)
+1. Instala el plugin en Claude
+2. Ejecuta `/inicializar-talent-mx3` — crea la estructura de datos en tu carpeta de trabajo
+3. Ejecuta `/crear-perfil` — inicia tu primer Intake Meeting consultivo
+4. _(Opcional)_ Ejecuta `/poblar-ontologia` primero si quieres cargar el conocimiento de tu industria antes de crear perfiles
+
+---
+
+## ⌨️ Commands
 
 | Command | Descripción |
 |---------|-------------|
-| `/inicializar-talent-mx3` | Crea la estructura de carpetas y ontología seed en tu carpeta de trabajo |
-| `/crear-perfil` | Inicia un Intake Meeting consultivo para generar un Perfil de Puesto Core |
-| `/crear-variacion` | Deriva una variación de un perfil existente (hereda competencias base) |
-| `/crear-oferta` | Genera ofertas de empleo adaptadas por plataforma (OCC, LinkedIn, Computrabajo, Indeed) |
-| `/vacante-completa` | Flujo completo: perfil → variaciones → ofertas en una sola sesión |
-| `/poblar-ontologia` | Carga conocimiento de una industria o área funcional a la ontología |
-| `/crear-evaluacion` | Genera guía de entrevista y scorecard de evaluación basados en el perfil |
+| `/inicializar-talent-mx3` | Crea la estructura de carpetas y ontología seed |
+| `/crear-perfil` | Intake Meeting consultivo → Perfil Core (7 secciones) |
+| `/crear-variacion` | Deriva una variación de un perfil existente (hereda base) |
+| `/crear-oferta` | Genera ofertas por plataforma (OCC, LinkedIn, Computrabajo, Indeed) |
+| `/vacante-completa` | Flujo completo: perfil → variaciones → ofertas en una sesión |
+| `/poblar-ontologia` | Carga conocimiento de una industria o área funcional |
+| `/crear-evaluacion` | Genera guía de entrevista + scorecard basados en el perfil |
 
-### Skills (motor interno)
+---
+
+## ⚙️ Skills
 
 | Skill | Capa | Función |
 |-------|------|---------|
 | `validador-legal-mx` | Foundation | Valida perfiles contra LFT, NOM-035, STPS |
-| `plantillas-industria-mx` | Core | Templates de roles por industria mexicana |
-| `constructor-perfil` | Core | Intake Meeting consultivo — genera Core (7 secciones) + Variación (6 secciones) |
-| `generador-oferta` | Output | Fórmula de 8 pasos para ofertas por plataforma |
 | `enriquecedor-ontologia` | Foundation | Aprende automáticamente durante cada `/crear-perfil` |
 | `constructor-ontologia` | Foundation | Poblar ontología de forma intencional |
+| `plantillas-industria-mx` | Core | Templates de roles por industria mexicana |
+| `constructor-perfil` | Core | Intake Meeting consultivo — Core + Variación |
 | `benchmark-salarial-mx` | Core | Rangos salariales por zona, industria y nivel |
 | `generador-persona-candidato` | Core | Retrato del candidato ideal para sourcing |
+| `generador-oferta` | Output | Fórmula de 8 pasos para ofertas por plataforma |
 | `constructor-evaluacion` | Output | Guías de entrevista + scorecard + preguntas STAR |
 
-## Primeros pasos
+---
 
-1. Instala el plugin en Claude
-2. Ejecuta `/inicializar-talent-mx3` para crear la estructura de datos en tu carpeta
-3. Ejecuta `/crear-perfil` para crear tu primer perfil de puesto
-4. Opcionalmente, ejecuta `/poblar-ontologia` primero si quieres cargar el conocimiento de tu industria
+## 📁 Estructura de datos
 
-## Estructura de datos
-
-Al ejecutar `/inicializar-talent-mx3`, se crea esta estructura en tu carpeta de trabajo:
+Al ejecutar `/inicializar-talent-mx3`, se crea esta jerarquía en tu carpeta de trabajo:
 
 ```
 data/
-├── indice.md                        ← Tabla de contenidos (con códigos SS-AA)
-├── registro.md                      ← Tabla maestra de códigos SS-AA-PP-VV
-├── comun/                           ← Conocimiento transversal MX
+├── indice.md                          ← Tabla de contenidos global
+├── registro.md                        ← Tabla maestra de perfiles
+├── comun/                             ← Conocimiento transversal MX
 │   ├── competencias/
 │   └── herramientas/
 └── sectores/
-    └── ti-servicios/               ← Sector seed incluido (SS=01)
+    └── ti-servicios/                  ← Sector seed (incluido por defecto)
         ├── industria.md
-        ├── areas/
-        │   ├── atencion-cliente/   ← Área como directorio
-        │   │   ├── area.md
-        │   │   └── perfiles/       ← Perfiles Core, variaciones, ofertas del área
-        │   └── operaciones-campo/
-        │       ├── area.md
-        │       └── perfiles/
-        └── competencias/
+        ├── competencias/
+        └── areas/
+            ├── atencion-cliente/      ← Área como directorio
+            │   ├── area.md            ← Definición del área
+            │   └── perfiles/          ← Perfiles del área
+            │       ├── variaciones/   ← Variaciones por cliente/contexto
+            │       └── ofertas/       ← Ofertas listas para publicar
+            └── operaciones-campo/
+                ├── area.md
+                └── perfiles/
+                    ├── variaciones/
+                    └── ofertas/
 ```
 
-## Modelo de herencia
+**Convención de nombres:** los archivos de perfil usan el formato `PP-slug.md` donde `PP` es el número de perfil dentro del área. El sector (`SS`) y área (`AA`) se infieren de su ubicación en el árbol — no se repiten en el nombre del archivo.
+
+---
+
+## 🔗 Modelo de herencia
 
 ```
 Perfil Core (competencias base)
-    ├── Variación Amazon (hereda + agrega específico)
-    ├── Variación MELI (hereda + agrega específico)
-    └── Variación Walmart (hereda + agrega específico)
+    ├── Variación Amazon   (hereda + agrega específico de cliente)
+    ├── Variación MELI     (hereda + agrega específico de cliente)
+    └── Variación Walmart  (hereda + agrega específico de cliente)
          ├── Oferta OCC
          ├── Oferta LinkedIn
          └── Oferta Computrabajo
 ```
 
-## Compliance
+Cada nivel hereda del anterior: **Core → Variación → Oferta**. Las variaciones sólo documentan lo que cambia; las ofertas adaptan el lenguaje a cada plataforma.
+
+---
+
+## ✅ Compliance
 
 Todos los perfiles y ofertas se validan automáticamente contra:
-- **LFT** (Ley Federal del Trabajo)
-- **NOM-035** (Factores de riesgo psicosocial)
-- **STPS** (Seguridad y salud en el trabajo)
-- **Anti-discriminación** (Artículos 2, 3, 56, 133 LFT)
 
-## Configuración opcional
+| Marco | Alcance |
+|-------|---------|
+| **LFT** | Ley Federal del Trabajo |
+| **NOM-035** | Factores de riesgo psicosocial |
+| **STPS** | Seguridad y salud en el trabajo |
+| **Anti-discriminación** | Artículos 2, 3, 56, 133 LFT |
 
-### Conexión a ~~git
+---
 
-Para que la ontología persista entre sesiones y se sincronice con tu equipo, configura un MCP server de ~~git apuntando a un repositorio privado.
+## 🆕 Novedades en v4.0.0
+
+- **Jerarquía unificada** — se elimina la separación `ontologia/` / `perfiles/`; todo vive en un único árbol `sectores/`
+- **Áreas como directorios** — cada área tiene su propia carpeta con `variaciones/` y `ofertas/` dentro de `perfiles/`
+- **Nomenclatura simplificada** — formato `PP-slug.md`; sector y área se derivan de la ruta, no del nombre
+- **Compliance canónico** — todas las referencias internas usan `${CLAUDE_PLUGIN_ROOT}`
+
+---
+
+## ⚙️ Configuración opcional
+
+### Persistencia con ~~git
+
+Para sincronizar la ontología entre sesiones y compartirla con tu equipo, configura un MCP server de ~~git apuntando a un repositorio privado.
+
+---
 
 ## Autor
 
