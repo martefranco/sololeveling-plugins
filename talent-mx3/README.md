@@ -47,20 +47,22 @@ Al ejecutar `/inicializar-talent-mx3`, se crea esta estructura en tu carpeta de 
 
 ```
 data/
+├── indice.md                        ← Tabla de contenidos (con códigos SS-AA)
 ├── registro.md                      ← Tabla maestra de códigos SS-AA-PP-VV
-├── ontologia/
-│   ├── indice.md                    ← Tabla de contenidos (con códigos SS-AA)
-│   ├── sectores/
-│   │   └── ti-servicios/            ← Sector seed incluido (SS=01)
-│   │       ├── industria.md
-│   │       ├── areas/               ← Áreas con códigos AA
-│   │       └── competencias/
-│   └── comun/                       ← Conocimiento transversal MX
-│       ├── competencias/
-│       └── herramientas/
-└── perfiles/                        ← Perfiles Core (SS-AA-PP-slug.md)
-    ├── variaciones/                 ← Variaciones (SS-AA-PP-VV-slug--contexto.md)
-    └── ofertas/                     ← Ofertas por plataforma
+├── comun/                           ← Conocimiento transversal MX
+│   ├── competencias/
+│   └── herramientas/
+└── sectores/
+    └── ti-servicios/               ← Sector seed incluido (SS=01)
+        ├── industria.md
+        ├── areas/
+        │   ├── atencion-cliente/   ← Área como directorio
+        │   │   ├── area.md
+        │   │   └── perfiles/       ← Perfiles Core, variaciones, ofertas del área
+        │   └── operaciones-campo/
+        │       ├── area.md
+        │       └── perfiles/
+        └── competencias/
 ```
 
 ## Modelo de herencia

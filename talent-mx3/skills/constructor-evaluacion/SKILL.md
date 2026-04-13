@@ -33,13 +33,15 @@ Cada pregunta DEBE estar vinculada a una competencia del perfil. No incluir preg
 
 3. Si existe persona del candidato → usar sección f (red flags) para preguntas trampa
 
-4. Generar guía con formato en `references/formato-guia-evaluacion.md`
+4. Generar guía con formato en `${CLAUDE_PLUGIN_ROOT}/skills/constructor-evaluacion/references/formato-guia-evaluacion.md`
 
 5. Invocar `validador-legal-mx` para verificar que ninguna pregunta sea discriminatoria
 
 6. Presentar: "Generé la guía de evaluación para [título] con [N] preguntas técnicas, [N] conductuales, [N] de fit, y 1 escenario práctico."
 
-7. Guardar en `data/perfiles/`: `YYYY-MM-DD-titulo-slug--guia-evaluacion.md`
+7. Guardar en `data/sectores/<sector>/areas/<area>/perfiles/`: `YYYY-MM-DD-titulo-slug--guia-evaluacion.md`
+
+   > El sector y área se obtienen del Perfil Core recibido como input (su ruta o metadatos SS-AA).
 
 ## Reglas
 

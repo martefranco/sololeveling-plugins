@@ -15,10 +15,16 @@ Tabla maestra de asignación de códigos SS-AA-PP-VV. Consultar SIEMPRE antes de
 | Perfil Core (PP) | 2 dígitos dentro del área | `01` = Asesor de Soporte N1 |
 | Variación (VV) | 2 dígitos dentro del perfil | `01` = Proyecto Teams - Transf. Digital |
 
-**Nomenclatura de archivos:**
-- Perfil Core: `SS-AA-PP-titulo-slug.md` → `01-01-01-asesor-soporte-n1.md`
-- Variación: `SS-AA-PP-VV-titulo-slug--contexto.md` → `01-01-01-01-asesor-soporte-n1--proyecto-teams.md`
-- Oferta: `SS-AA-PP-VV-titulo-slug--plataforma.md` → `01-01-01-01-asesor-soporte-n1--linkedin.md`
+**Nomenclatura de archivos (v4.0.0):**
+
+Los códigos SS y AA dan contexto a través de la ruta del directorio, no del nombre de archivo. Solo PP y VV aparecen en el nombre del archivo.
+
+- Perfil Core: `PP-titulo-slug.md` → `01-asesor-soporte-n1.md`
+  - Ruta: `data/sectores/<sector>/areas/<area>/perfiles/`
+- Variación: `PP-VV-titulo-slug--contexto.md` → `01-01-asesor-soporte-n1--proyecto-teams.md`
+  - Ruta: `data/sectores/<sector>/areas/<area>/perfiles/variaciones/`
+- Oferta: `PP-VV-titulo-slug--plataforma.md` → `01-01-asesor-soporte-n1--linkedin.md`
+  - Ruta: `data/sectores/<sector>/areas/<area>/perfiles/ofertas/`
 
 ---
 

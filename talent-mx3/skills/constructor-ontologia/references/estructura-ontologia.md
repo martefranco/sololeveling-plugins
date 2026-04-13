@@ -5,28 +5,28 @@
 ```
 data/
   registro.md                                    ← Tabla maestra de códigos SS-AA-PP-VV
-  ontologia/
-    indice.md                                    ← Lookup table (SECTORIAL / COMÚN)
-    sectores/
-      <nombre-sector>/                           ← Una carpeta por sector
-        industria.md                             ← Descripción del sector, métricas, empresas
-        areas/
-          <nombre-area>.md                       ← Roles típicos, funciones, herramientas
-        competencias/
-          tecnicas/
-            <familia-competencia>.md             ← Competencias técnicas agrupadas
-    comun/                                       ← Transversal a todos los sectores
+  indice.md                                      ← Lookup table (SECTORIAL / COMÚN)
+  sectores/
+    <nombre-sector>/                             ← Una carpeta por sector
+      industria.md                               ← Descripción del sector, métricas, empresas
+      areas/
+        <nombre-area>/                           ← Directorio por área (antes era un archivo .md)
+          area.md                                ← Contenido del área (roles, funciones, herramientas)
+          perfiles/                              ← Perfiles Core del área
+          perfiles/variaciones/                  ← Variaciones de perfiles del área
+          perfiles/ofertas/                      ← Ofertas por plataforma del área
       competencias/
-        conductuales/catalogo.md                 ← Competencias blandas universales
-        certificaciones/regulatorias.md          ← DC-3, NOM-035, LFT, REPSE
-      herramientas/
-        gestion-clientes.md                      ← CRMs, ticketing, contact center
-        gestion-empresarial.md                   ← ERPs, nómina, contabilidad
-        plataformas.md                           ← Marketplaces, e-commerce
-        regulatorias.md                          ← SAT, IMSS, SUA, CFDI
-  perfiles/                                      ← Perfiles Core (archivos SS-AA-PP-slug.md)
-    variaciones/                                 ← Variaciones (archivos SS-AA-PP-VV-slug--contexto.md)
-    ofertas/                                     ← Ofertas por plataforma
+        tecnicas/
+          <familia-competencia>.md               ← Competencias técnicas agrupadas
+  comun/                                         ← Transversal a todos los sectores
+    competencias/
+      conductuales/catalogo.md                   ← Competencias blandas universales
+      certificaciones/regulatorias.md            ← DC-3, NOM-035, LFT, REPSE
+    herramientas/
+      gestion-clientes.md                        ← CRMs, ticketing, contact center
+      gestion-empresarial.md                     ← ERPs, nómina, contabilidad
+      plataformas.md                             ← Marketplaces, e-commerce
+      regulatorias.md                            ← SAT, IMSS, SUA, CFDI
 ```
 
 ## Sistema de códigos SS-AA-PP-VV
@@ -36,7 +36,7 @@ Cada sector y área que se crea en la ontología recibe un código numérico en 
 | Nivel | Código | Se asigna al... |
 |-------|--------|-----------------|
 | Sector (SS) | 01-99 | crear sector en ontología |
-| Área (AA) | 01-99 | crear área dentro de un sector |
+| Área (AA) | 01-99 | crear área dentro de un sector — mapeado al directorio `areas/<nombre-area>/` |
 | Perfil Core (PP) | 01-99 | crear perfil vía /crear-perfil |
 | Variación (VV) | 01-99 | crear variación vía /crear-variacion |
 
@@ -74,7 +74,9 @@ Las carpetas de la ontología mantienen nombres legibles (slugs). El mapeo slug 
 - [Norma 1]: [por qué aplica]
 ```
 
-## Formato de área funcional
+## Formato de área funcional (area.md)
+
+El contenido del área se guarda en el archivo `area.md` dentro del directorio del área: `sectores/<nombre-sector>/areas/<nombre-area>/area.md`.
 
 ```markdown
 # [Nombre del Área Funcional]
@@ -96,7 +98,7 @@ Las carpetas de la ontología mantienen nombres legibles (slugs). El mapeo slug 
 
 | Pregunta | Si SÍ → | Si NO → |
 |----------|---------|---------|
-| ¿Lo usaría una empresa de otro sector? | `comun/` | `sectores/<sector>/` |
-| ¿Es una norma o regulación mexicana? | `comun/competencias/certificaciones/` | Evaluar por sector |
-| ¿Es una herramienta de uso general? | `comun/herramientas/` | `sectores/<sector>/competencias/tecnicas/` |
-| ¿Es una competencia conductual? | `comun/competencias/conductuales/` | N/A (las conductuales siempre son comunes) |
+| ¿Lo usaría una empresa de otro sector? | `data/comun/` | `data/sectores/<sector>/` |
+| ¿Es una norma o regulación mexicana? | `data/comun/competencias/certificaciones/` | Evaluar por sector |
+| ¿Es una herramienta de uso general? | `data/comun/herramientas/` | `data/sectores/<sector>/competencias/tecnicas/` |
+| ¿Es una competencia conductual? | `data/comun/competencias/conductuales/` | N/A (las conductuales siempre son comunes) |

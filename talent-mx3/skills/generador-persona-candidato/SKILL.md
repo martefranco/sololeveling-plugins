@@ -35,11 +35,13 @@ Un Perfil Core completo (7 secciones) y opcionalmente su Variación (6 secciones
    - Ontología del sector: retos de contratación
    - Competencias conductuales: tipo de personalidad
 
-4. Generar retrato con formato en `references/formato-persona.md`
+4. Generar retrato con formato en `${CLAUDE_PLUGIN_ROOT}/skills/generador-persona-candidato/references/formato-persona.md`
 
 5. Presentar: "Generé el retrato del candidato ideal para [título]. ¿Quieres que lo guarde?"
 
-6. Guardar en `data/perfiles/` junto al Core: `YYYY-MM-DD-titulo-slug--persona-candidato.md`
+6. Guardar en `data/sectores/<sector>/areas/<area>/perfiles/` junto al Core: `YYYY-MM-DD-titulo-slug--persona-candidato.md`
+
+   > El sector y área se obtienen del Perfil Core recibido como input (su ruta o metadatos SS-AA).
 
 ## Reglas
 

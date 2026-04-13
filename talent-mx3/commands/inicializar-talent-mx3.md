@@ -9,27 +9,24 @@ Este comando se ejecuta una sola vez al empezar a usar el plugin. Crea las carpe
 
 Pasos:
 
-1. Verificar si ya existe `data/ontologia/` en el directorio de trabajo del usuario.
+1. Verificar si ya existe `data/sectores/` en el directorio de trabajo del usuario.
    - Si ya existe → preguntar: "Ya existe una estructura de talent-mx3 en esta carpeta. ¿Quieres reiniciarla (se perderá lo existente) o solo verificar que esté completa?"
    - Si no existe → continuar con la creación.
 
 2. Crear la estructura de carpetas:
    ```
    data/
+   ├── indice.md
    ├── registro.md
-   ├── ontologia/
-   │   ├── sectores/                        ← Vacío — se puebla con /poblar-ontologia
-   │   └── comun/
-   │       ├── competencias/
-   │       │   ├── conductuales/
-   │       │   └── certificaciones/
-   │       └── herramientas/
-   └── perfiles/
-       ├── variaciones/
-       └── ofertas/
+   ├── comun/
+   │   ├── competencias/
+   │   │   ├── conductuales/
+   │   │   └── certificaciones/
+   │   └── herramientas/
+   └── sectores/                        ← Vacío — se puebla con /poblar-ontologia
    ```
 
-3. Copiar los archivos seed desde `${CLAUDE_PLUGIN_ROOT}/data/seed/ontologia/` a `data/ontologia/`.
+3. Copiar los archivos seed desde `${CLAUDE_PLUGIN_ROOT}/data/seed/` a `data/`.
    Archivos seed incluidos (solo conocimiento común):
    - `indice.md` — Tabla de contenidos de la ontología
    - `comun/competencias/conductuales/catalogo.md` — Competencias conductuales universales
@@ -47,10 +44,9 @@ Pasos:
    "Estructura de talent-mx3 creada. Tienes:
    - Conocimiento común del mercado mexicano (regulaciones, herramientas, competencias conductuales)
    - Registro de códigos SS-AA-PP-VV listo para usar
-   - Carpetas de perfiles, variaciones y ofertas listas
 
    **Siguiente paso obligatorio:** ejecuta `/poblar-ontologia` para construir el conocimiento de tu industria antes de crear perfiles."
 
-6. Verificar si `data/ontologia/sectores/` está vacío usando Glob `data/ontologia/sectores/*/industria.md`.
+6. Verificar si `data/sectores/` está vacío usando Glob `data/sectores/*/industria.md`.
    - Si no hay resultados → mostrar: "No tienes sectores cargados aún. Ejecuta `/poblar-ontologia` para construir el conocimiento de tu industria. El sistema te guiará paso a paso con ejemplos."
    - Si hay resultados → no mostrar nada adicional.

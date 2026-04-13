@@ -15,13 +15,14 @@ La oferta de empleo se genera idealmente desde una **Variación**, porque contie
 Si solo existe el Core (sin variación), se puede generar la oferta, pero será más genérica y le faltarán datos de contexto que atraen candidatos (salario, equipo, proyecto).
 
 **Búsqueda de archivos:**
-- Primero buscar en `data/perfiles/variaciones/` (preferido)
-- Si no hay variaciones, buscar en `data/perfiles/` (Cores)
+- Primero buscar en `data/sectores/<sector>/areas/<area>/perfiles/variaciones/` (preferido)
+- Si no hay variaciones, buscar en `data/sectores/<sector>/areas/<area>/perfiles/` (Cores)
 - Si hay un Core con variaciones, preguntar al usuario cuál usar
+- El sector y área se infieren del perfil que el usuario proporciona como input
 
 ## Fórmula de 8 pasos
 
-Cada oferta sigue esta estructura. Los detalles de cada paso están en `references/formula-8-pasos.md`.
+Cada oferta sigue esta estructura. Los detalles de cada paso están en `${CLAUDE_PLUGIN_ROOT}/skills/generador-oferta/references/formula-8-pasos.md`.
 
 1. **Título** — Claro, con keywords, sin jerga interna
 2. **Resumen del puesto** — 2-3 oraciones que capturan la esencia
@@ -38,15 +39,17 @@ Las ofertas NO son solo para atraer candidatos. También deben permitir que el c
 
 ## Nomenclatura de archivos
 
-Seguir las reglas de `constructor-perfil/references/reglas-nomenclatura.md`:
-- Desde Variación: `SS-AA-PP-VV-titulo-slug--plataforma.md`
-- Desde Core (sin variación): `SS-AA-PP-00-titulo-slug--plataforma.md`
+Seguir las reglas de `${CLAUDE_PLUGIN_ROOT}/skills/constructor-perfil/references/reglas-nomenclatura.md`:
+- Desde Variación: `PP-VV-titulo-slug--plataforma.md`
+- Desde Core (sin variación): `PP-00-titulo-slug--plataforma.md`
 
-Guardar en `data/perfiles/ofertas/`.
+> El prefijo SS-AA ya NO forma parte del nombre del archivo. El sector y área quedan implícitos en la ruta de guardado.
+
+Guardar en `data/sectores/<sector>/areas/<area>/perfiles/ofertas/`.
 
 ## Adaptación por plataforma
 
-Las reglas específicas por plataforma están en `references/reglas-plataforma.md`.
+Las reglas específicas por plataforma están en `${CLAUDE_PLUGIN_ROOT}/skills/generador-oferta/references/reglas-plataforma.md`.
 
 | Plataforma | Tono | Longitud | Enfoque |
 |-----------|------|----------|---------|
@@ -63,7 +66,7 @@ Las reglas específicas por plataforma están en `references/reglas-plataforma.m
 4. Generar oferta(s) adaptada(s) por plataforma
 5. Invocar `validador-legal-mx` para verificar la oferta
 6. Presentar al usuario para revisión
-7. Guardar en `data/perfiles/ofertas/` con nomenclatura correcta
+7. Guardar en `data/sectores/<sector>/areas/<area>/perfiles/ofertas/` con nomenclatura correcta
 
 ## Reglas
 

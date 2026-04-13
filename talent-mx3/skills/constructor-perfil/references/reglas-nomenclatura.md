@@ -21,29 +21,34 @@ VV  - Variación     (01-99 por perfil)
 
 ### Nomenclatura de archivos
 
+El sector (SS) y el área (AA) ya están implícitos en la ruta del archivo — no se repiten en el nombre.
+
 **Perfil Core:**
 ```
-SS-AA-PP-titulo-slug.md
+PP-titulo-slug.md
 ```
-Ejemplo: `01-03-01-especialista-ia-llm.md`
+Ruta: `data/sectores/<SS-slug>/areas/<AA-slug>/perfiles/PP-titulo-slug.md`
+Ejemplo: `01-especialista-ia-llm.md` en `data/sectores/ti-servicios/areas/desarrollo-software/perfiles/`
 
 **Variación:**
 ```
-SS-AA-PP-VV-titulo-slug--contexto-slug.md
+PP-VV-titulo-slug--contexto-slug.md
 ```
-Ejemplo: `01-03-01-01-especialista-ia-llm--transf-digital.md`
+Ruta: `data/sectores/<SS-slug>/areas/<AA-slug>/perfiles/variaciones/PP-VV-titulo-slug--contexto-slug.md`
+Ejemplo: `01-01-especialista-ia-llm--transf-digital.md`
 
 **Oferta (generada desde variación):**
 ```
-SS-AA-PP-VV-titulo-slug--plataforma.md
+PP-VV-titulo-slug--plataforma.md
 ```
-Ejemplo: `01-03-01-01-especialista-ia-llm--linkedin.md`
+Ruta: `data/sectores/<SS-slug>/areas/<AA-slug>/perfiles/ofertas/PP-VV-titulo-slug--plataforma.md`
+Ejemplo: `01-01-especialista-ia-llm--linkedin.md`
 
 **Oferta (generada desde Core, sin variación):**
 ```
-SS-AA-PP-00-titulo-slug--plataforma.md
+PP-00-titulo-slug--plataforma.md
 ```
-Ejemplo: `01-03-01-00-especialista-ia-llm--linkedin.md`
+Ejemplo: `01-00-especialista-ia-llm--linkedin.md`
 
 ### Reglas del slug
 - Solo minúsculas, sin acentos
@@ -61,12 +66,12 @@ Los códigos de sector (SS) y área (AA) se corresponden con la estructura de la
 |-----------|-------------------|
 | 01 | `sectores/ti-servicios/` |
 
-| Código SS-AA | Archivo ontología |
-|-------------|-------------------|
-| 01-01 | `sectores/ti-servicios/areas/atencion-cliente.md` |
-| 01-02 | `sectores/ti-servicios/areas/operaciones-campo.md` |
+| Código SS-AA | Directorio del área |
+|-------------|---------------------|
+| 01-01 | `sectores/ti-servicios/areas/atencion-cliente/area.md` |
+| 01-02 | `sectores/ti-servicios/areas/operaciones-campo/area.md` |
 
-Este mapeo se mantiene en `data/registro.md` y en `data/ontologia/indice.md`.
+Este mapeo se mantiene en `data/registro.md` y en `data/indice.md`.
 
 ## Cuándo se asigna cada código
 
@@ -89,5 +94,5 @@ Este mapeo se mantiene en `data/registro.md` y en `data/ontologia/indice.md`.
       NO → asignar siguiente AA, registrar
   → Asignar siguiente PP disponible en ese SS-AA
   → Registrar en data/registro.md
-  → Guardar archivo con nombre SS-AA-PP-slug.md
+  → Guardar archivo en data/sectores/<SS-slug>/areas/<AA-slug>/perfiles/PP-slug.md
 ```

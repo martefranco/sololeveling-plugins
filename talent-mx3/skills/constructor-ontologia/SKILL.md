@@ -21,7 +21,7 @@ Usar cuando:
 
 Determinar el modo leyendo el filesystem:
 
-- Verificar con Glob `data/ontologia/sectores/*/industria.md`.
+- Verificar con Glob `data/sectores/*/industria.md`.
 - **Sin resultados** → **Modo A: Primer Sector Guiado** (la ontología no tiene sectores aún).
 - **Con resultados** → **Modo B: Sector Adicional** (flujo estándar para agregar o enriquecer sectores).
 
@@ -55,7 +55,7 @@ Asignar código SS=01 (primer sector) y derivar slug del nombre proporcionado.
 
 ### A.3 — Construir industria.md sección por sección
 
-Leer `${CLAUDE_PLUGIN_ROOT}/data/seed/ontologia/sectores/ti-servicios/industria.md` como ejemplo de referencia.
+Leer `${CLAUDE_PLUGIN_ROOT}/data/seed/sectores/ti-servicios/industria.md` como ejemplo de referencia.
 
 Para CADA sección del formato `industria.md`, en este orden:
 
@@ -74,7 +74,7 @@ Agrupar 2-3 secciones por turno de conversación para no saturar al usuario.
 
 Preguntar: "¿Cuál es el área funcional más representativa de tu operación? Es donde más contratas o donde más necesitas perfiles."
 
-Leer `${CLAUDE_PLUGIN_ROOT}/data/seed/ontologia/sectores/ti-servicios/areas/atencion-cliente.md` como ejemplo de formato.
+Leer `${CLAUDE_PLUGIN_ROOT}/data/seed/sectores/ti-servicios/areas/atencion-cliente/area.md` como ejemplo de formato.
 
 Recopilar para el área:
 - Nombre del área
@@ -102,10 +102,10 @@ Preguntar: "¿Todo correcto? Puedo ajustar cualquier dato antes de crear los arc
 
 Solo después de confirmación explícita en A.5:
 
-1. Crear `data/ontologia/sectores/<slug>/industria.md` siguiendo formato de `estructura-ontologia.md`.
-2. Crear `data/ontologia/sectores/<slug>/areas/<slug-area>.md` con los roles recopilados.
-3. Crear carpeta `data/ontologia/sectores/<slug>/competencias/tecnicas/` (vacía, lista para uso futuro).
-4. Actualizar `data/ontologia/indice.md` — agregar sección CONOCIMIENTO SECTORIAL con la entrada del nuevo sector.
+1. Crear `data/sectores/<slug>/industria.md` siguiendo formato de `estructura-ontologia.md`.
+2. Crear directorio `data/sectores/<slug>/areas/<slug-area>/` y dentro el archivo `area.md` con los roles recopilados. Crear también `perfiles/`, `perfiles/variaciones/` y `perfiles/ofertas/` dentro del directorio del área.
+3. Crear carpeta `data/sectores/<slug>/competencias/tecnicas/` (vacía, lista para uso futuro).
+4. Actualizar `data/indice.md` — agregar sección CONOCIMIENTO SECTORIAL con la entrada del nuevo sector.
 5. Actualizar `data/registro.md` — agregar fila SS=01 en SECTORES y fila 01-01 en ÁREAS.
 
 ### A.7 — Reporte y siguiente paso
@@ -133,8 +133,8 @@ Flujo para agregar sectores o áreas cuando ya existe al menos un sector en la o
 Preguntar: "¿Sobre qué industria o área funcional quieres construir conocimiento?"
 
 Opciones:
-- **Nueva industria completa** → crear rama en `sectores/<nuevo-sector>/`
-- **Área funcional dentro de un sector existente** → agregar a `sectores/<sector>/areas/`
+- **Nueva industria completa** → crear rama en `data/sectores/<nuevo-sector>/`
+- **Área funcional dentro de un sector existente** → agregar a `data/sectores/<sector>/areas/`
 - **Enriquecer un sector existente** → agregar datos a archivos existentes
 
 ### 2. Asignar códigos
@@ -156,20 +156,20 @@ Para una **nueva industria**:
 - ¿Cuál es la concentración geográfica en México?
 
 Para **enriquecer** un sector existente:
-- Verificar qué ya existe leyendo `data/ontologia/indice.md`
+- Verificar qué ya existe leyendo `data/indice.md`
 - Preguntar solo por lo que falta
 - No duplicar información existente
 
 ### 4. Crear/actualizar archivos
 
-- Crear archivos `.md` siguiendo la estructura en `references/estructura-ontologia.md`
+- Crear archivos `.md` siguiendo la estructura en `${CLAUDE_PLUGIN_ROOT}/skills/constructor-ontologia/references/estructura-ontologia.md`
 - Cada archivo debe ser autocontenido y legible
 - Usar formato consistente con los archivos existentes
 - Clasificar correctamente entre sectorial y común
 
 ### 5. Actualizar índice y registro
 
-- Actualizar `data/ontologia/indice.md` con las nuevas entradas
+- Actualizar `data/indice.md` con las nuevas entradas
 - Actualizar `data/registro.md` con los códigos SS y AA asignados
 
 ### 6. Reportar
@@ -188,4 +188,4 @@ Para **enriquecer** un sector existente:
 
 ## Estructura de referencia
 
-Leer `references/estructura-ontologia.md` para la estructura completa esperada y los formatos de archivo.
+Leer `${CLAUDE_PLUGIN_ROOT}/skills/constructor-ontologia/references/estructura-ontologia.md` para la estructura completa esperada y los formatos de archivo.

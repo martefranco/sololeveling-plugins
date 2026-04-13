@@ -12,7 +12,7 @@ Ejecutar el flujo completo de `/crear-perfil` (lee `${CLAUDE_PLUGIN_ROOT}/skills
 El Intake Meeting recopila toda la información y la separa automáticamente en:
 - Perfil Core (genérico del rol, 7 secciones)
 - Variación (contexto específico, 6 secciones)
-Ambos documentos se generan con nomenclatura SS-AA-PP y SS-AA-PP-VV.
+Ambos documentos se generan con nomenclatura SS-AA-PP y SS-AA-PP-VV (el nombre de archivo usa solo PP y VV; SS y AA quedan implícitos en la ruta del directorio).
 Al terminar, preguntar si los documentos son satisfactorios antes de continuar.
 
 **PASO 1.5 — Enriquecer (opcional)**
@@ -39,8 +39,8 @@ Ejecutar `generador-oferta` para cada combinación variación × plataforma.
 
 **PASO 4 — Resumen final**
 Presentar resumen completo:
-- Perfil Core creado (código SS-AA-PP, archivo)
-- Variaciones creadas (códigos SS-AA-PP-VV, archivos)
+- Perfil Core creado (código SS-AA-PP en registro; archivo nombrado con PP)
+- Variaciones creadas (códigos SS-AA-PP-VV en registro; archivos nombrados con PP-VV)
 - Enriquecimientos generados (benchmark, persona, evaluación)
 - Ofertas generadas (por variación y plataforma)
 - Hallazgos de compliance

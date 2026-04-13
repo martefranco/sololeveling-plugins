@@ -10,7 +10,7 @@ Tabla de contenidos de la base de conocimiento. Las skills consultan este archiv
 
 > No hay sectores precargados. Ejecuta `/poblar-ontologia` para construir el conocimiento de tu primera industria.
 >
-> Los archivos de TI/Servicios Externalizados están disponibles como ejemplo de referencia en `${CLAUDE_PLUGIN_ROOT}/data/seed/ontologia/sectores/ti-servicios/` — nunca se copian al workspace.
+> Los archivos de TI/Servicios Externalizados están disponibles como ejemplo de referencia en `${CLAUDE_PLUGIN_ROOT}/data/seed/sectores/ti-servicios/` — nunca se copian al workspace.
 
 ---
 

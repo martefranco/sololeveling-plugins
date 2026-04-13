@@ -6,7 +6,7 @@ description: >
 
 # Enriquecedor de Ontología
 
-Detectar y agregar conocimiento nuevo a `data/ontologia/` durante las conversaciones de creación de perfiles, sin interrumpir el flujo del Intake Meeting.
+Detectar y agregar conocimiento nuevo a `data/` durante las conversaciones de creación de perfiles, sin interrumpir el flujo del Intake Meeting.
 
 ## Cuándo se activa
 
@@ -22,19 +22,19 @@ Se ejecuta en paralelo durante `constructor-perfil`. Al detectar que el usuario 
    - Datos sectoriales (salarios, rotación, empresas competidoras)
 
 2. Para cada elemento nuevo detectado:
-   a. Buscar en `data/ontologia/indice.md` si ya existe
+   a. Buscar en `data/indice.md` si ya existe
    b. Si NO existe → clasificar y agregar
    c. Si existe parcialmente → enriquecer sin duplicar
 
 3. Clasificar usando la regla sectorial/común:
-   - **Sectorial** (`sectores/<sector>/`): dato exclusivo de un sector específico
+   - **Sectorial** (`data/sectores/<sector>/`): dato exclusivo de un sector específico
      Ejemplos: fusionadora de fibra óptica, Seller Central de Amazon, SIPRES
-   - **Común** (`comun/`): dato transversal a cualquier empresa mexicana
+   - **Común** (`data/comun/`): dato transversal a cualquier empresa mexicana
      Ejemplos: SAT, CFDI, DC-3, competencias conductuales, Excel
 
 4. Agregar al archivo correspondiente dentro de la ontología
 
-5. Actualizar `data/ontologia/indice.md` con la nueva entrada
+5. Actualizar `data/indice.md` con la nueva entrada
 
 6. **Si se detecta un área funcional nueva:** asignar código AA consultando `data/registro.md`, registrar el nuevo código
 
@@ -42,7 +42,7 @@ Se ejecuta en paralelo durante `constructor-perfil`. Al detectar que el usuario 
 
 ## Reglas de clasificación
 
-Leer las reglas detalladas en `references/reglas-clasificacion.md`.
+Leer las reglas detalladas en `${CLAUDE_PLUGIN_ROOT}/skills/enriquecedor-ontologia/references/reglas-clasificacion.md`.
 
 ## Reglas de operación
 

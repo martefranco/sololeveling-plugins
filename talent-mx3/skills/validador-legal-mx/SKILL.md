@@ -1,7 +1,7 @@
 ---
 name: validador-legal-mx
 description: >
-  Validador de compliance laboral mexicano. Usar cuando se genere cualquier perfil de puesto, oferta de empleo, o guía de evaluación para verificar cumplimiento con LFT, NOM-035, STPS y normativa anti-discriminación. Se activa automáticamente — no requiere invocación directa del usuario. Triggers: "validar perfil", "compliance", "cumplimiento legal", "verificar normativa", "LFT", "NOM-035", "STPS", "discriminación".
+  Valida perfiles de puesto, ofertas de empleo y guías de evaluación contra la normativa laboral mexicana — LFT, NOM-035, STPS y normativa anti-discriminación. Se activa automáticamente cuando se genera cualquier documento de este tipo — no requiere invocación directa del usuario. Triggers: "validar perfil", "compliance", "cumplimiento legal", "verificar normativa", "LFT", "NOM-035", "STPS", "discriminación".
 ---
 
 # Validador Legal MX
@@ -18,7 +18,7 @@ Validar automáticamente perfiles de puesto, ofertas de empleo y guías de evalu
 ## Flujo de validación
 
 1. Recibir el documento a validar (perfil, oferta, o guía de evaluación)
-2. Leer el catálogo de reglas en `references/catalogo-reglas.md`
+2. Leer el catálogo de reglas en `${CLAUDE_PLUGIN_ROOT}/skills/validador-legal-mx/references/catalogo-reglas.md`
 3. Evaluar cada regla aplicable contra el documento
 4. Clasificar hallazgos por severidad: ERROR, WARNING, INFO
 5. Presentar resultados al usuario de forma clara y accionable

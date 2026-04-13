@@ -9,8 +9,8 @@ Generar una guía de evaluación para entrevistas basada en un Perfil Core y opc
 Lee `${CLAUDE_PLUGIN_ROOT}/skills/constructor-evaluacion/SKILL.md` y sigue el flujo definido ahí.
 
 Pasos:
-1. Si el usuario proporcionó argumento `$ARGUMENTS`, buscar el perfil en `data/perfiles/`.
-2. Si no, listar perfiles disponibles y pedir que elija.
+1. Si el usuario proporcionó argumento `$ARGUMENTS`, buscar el perfil en `data/sectores/` (buscando en `data/sectores/*/areas/*/perfiles/*.md`).
+2. Si no, listar perfiles disponibles en `data/sectores/` y pedir que elija.
 3. Cargar el Perfil Core. Las secciones clave son:
    - Core sección 3 (competencias técnicas) → preguntas técnicas
    - Core sección 4 (competencias conductuales) → preguntas STAR
@@ -30,4 +30,4 @@ Pasos:
    - Escenario práctico (opcional, recomendado para roles operativos)
    - Preparación de respuestas para preguntas del candidato
 8. Validar con `${CLAUDE_PLUGIN_ROOT}/skills/validador-legal-mx/references/catalogo-reglas.md` (reglas EVAL-*).
-9. Guardar en `data/perfiles/ofertas/` con nomenclatura consistente.
+9. Guardar en `data/sectores/<sector>/areas/<area>/perfiles/` con nomenclatura consistente (la ruta del sector y área se hereda del perfil seleccionado).

@@ -1,6 +1,6 @@
 {
   "name": "talent-mx3",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "description": "Sistema de Talent Acquisition para el mercado mexicano. Crea perfiles de puesto, ofertas de empleo por plataforma, y guias de evaluacion con validacion legal (LFT, NOM-035, STPS).",
   "author": {
     "name": "Mainbit"

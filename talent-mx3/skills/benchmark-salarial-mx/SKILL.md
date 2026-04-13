@@ -28,7 +28,7 @@ El rango salarial es un dato **contextual**, no genérico del rol. Por lo tanto:
 2. Buscar datos salariales (en orden de prioridad):
    a. ¿El template de `plantillas-industria-mx` tiene rango para este rol? → usar como base
    b. ¿El archivo de industria del sector tiene datos salariales? → cruzar con zona
-   c. Si no hay datos específicos → usar tabla de rangos base en `references/tabla-rangos-mx.md`
+   c. Si no hay datos específicos → usar tabla de rangos base en `${CLAUDE_PLUGIN_ROOT}/skills/benchmark-salarial-mx/references/tabla-rangos-mx.md`
 
 3. Ajustar por zona geográfica:
    - CDMX: referencia base (índice 1.0)
@@ -63,4 +63,4 @@ El rango salarial es un dato **contextual**, no genérico del rol. Por lo tanto:
 - El dato del usuario tiene prioridad sobre el benchmark
 - Indicar SIEMPRE la fuente: template, ontología, o estimación general
 - Los montos son en MXN brutos mensuales
-- Tabla de rangos en `references/tabla-rangos-mx.md`
+- Tabla de rangos en `${CLAUDE_PLUGIN_ROOT}/skills/benchmark-salarial-mx/references/tabla-rangos-mx.md`

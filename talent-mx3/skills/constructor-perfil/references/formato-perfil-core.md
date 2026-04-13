@@ -130,9 +130,9 @@ Después de recopilar toda la información del Intake Meeting:
 3. **Generar el Core** aplicando la regla de clasificación (tabla arriba)
    - Asignar código PP siguiente disponible
    - Registrar en `data/registro.md`
-   - Guardar en `data/perfiles/SS-AA-PP-slug.md`
+   - Guardar en `data/sectores/<SS-slug>/areas/<AA-slug>/perfiles/PP-slug.md`
 4. **Preguntar al usuario:** "El perfil genérico del rol está listo. La información específica de tu proyecto/equipo la guardaré como variación. ¿Quieres generar la variación ahora?"
-   - SÍ → generar Variación, asignar VV, registrar, guardar en `data/perfiles/variaciones/`
+   - SÍ → generar Variación, asignar VV, registrar, guardar en `data/sectores/<SS-slug>/areas/<AA-slug>/perfiles/variaciones/`
    - NO → solo guardar el Core
 5. **Validar ambos documentos** con validador-legal-mx
 

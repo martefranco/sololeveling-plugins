@@ -1,7 +1,7 @@
 ---
 name: constructor-perfil
 description: >
-  Skill central de talent-mx3. Digitaliza y potencia el Intake Meeting — el proceso consultivo donde se define el perfil real de un puesto de trabajo. Usar SIEMPRE que el usuario quiera crear un perfil de puesto, definir una vacante, entender qué tipo de persona necesita contratar, o iniciar un proceso de reclutamiento. También maneja la lógica de herencia para crear variaciones. Triggers: "crear perfil", "nuevo puesto", "necesito contratar", "abrir vacante", "definir puesto", "intake meeting", "qué perfil necesito", "crear variación", "variación para", "adaptar perfil".
+  Digitaliza y potencia el Intake Meeting — el proceso consultivo donde se define el perfil real de un puesto de trabajo. Usar SIEMPRE que el usuario quiera crear un perfil de puesto, definir una vacante, entender qué tipo de persona necesita contratar, o iniciar un proceso de reclutamiento. También maneja la lógica de herencia para crear variaciones. Triggers: "crear perfil", "nuevo puesto", "necesito contratar", "abrir vacante", "definir puesto", "intake meeting", "qué perfil necesito", "crear variación", "variación para", "adaptar perfil".
 ---
 
 # Constructor de Perfil — Intake Meeting Potenciado por IA
@@ -72,11 +72,11 @@ Antes de profundizar, buscar si existe un template relevante en `plantillas-indu
 
 ### Reglas de conversación
 
-Leer `references/flujo-conversacional.md` para tono, ritmo y técnicas de profundización.
+Leer `${CLAUDE_PLUGIN_ROOT}/skills/constructor-perfil/references/flujo-conversacional.md` para tono, ritmo y técnicas de profundización.
 
 ### Generación del output — Separación Core / Variación
 
-Después de recopilar información, leer `references/formato-perfil-core.md` para reglas de separación y formatos de ambos documentos.
+Después de recopilar información, leer `${CLAUDE_PLUGIN_ROOT}/skills/constructor-perfil/references/formato-perfil-core.md` para reglas de separación y formatos de ambos documentos.
 
 **Paso crítico:** Clasificar cada dato recopilado como genérico del ROL o específico de ESTA contratación usando la tabla de clasificación en formato-perfil-core.md.
 
@@ -84,7 +84,7 @@ Después de recopilar información, leer `references/formato-perfil-core.md` par
 
 ### Asignación de nomenclatura
 
-Leer `references/reglas-nomenclatura.md` para asignar códigos SS-AA-PP (y VV si aplica).
+Leer `${CLAUDE_PLUGIN_ROOT}/skills/constructor-perfil/references/reglas-nomenclatura.md` para asignar códigos SS-AA-PP (y VV si aplica).
 
 1. Consultar `data/registro.md` para obtener códigos de sector y área
 2. Si el sector o área no existe → asignar siguiente código, registrar
@@ -94,8 +94,10 @@ Leer `references/reglas-nomenclatura.md` para asignar códigos SS-AA-PP (y VV si
 
 ### Persistencia
 
-- Core → guardar en `data/perfiles/SS-AA-PP-titulo-slug.md`
-- Variación → guardar en `data/perfiles/variaciones/SS-AA-PP-VV-titulo-slug--contexto.md`
+- Core → guardar en `data/sectores/<SS-slug>/areas/<AA-slug>/perfiles/PP-titulo-slug.md`
+- Variación → guardar en `data/sectores/<SS-slug>/areas/<AA-slug>/perfiles/variaciones/PP-VV-titulo-slug--contexto.md`
+
+> El sector (`<SS-slug>`) y área (`<AA-slug>`) se obtienen del código SS-AA asignado en el paso de nomenclatura. Consultar `data/registro.md` para los slugs correspondientes a cada código.
 
 ### Validación legal
 
@@ -123,12 +125,12 @@ Si elige (c) o (d) → invocar `constructor-evaluacion`
 
 ## MODO 2: Crear Variación
 
-1. Cargar el Perfil Core existente (el usuario lo indica o se busca en `data/perfiles/`)
+1. Cargar el Perfil Core existente (el usuario lo indica o se busca en `data/sectores/<sector>/areas/<area>/perfiles/` — sector y área se infieren del contexto de la conversación o se le pide al usuario si no está claro)
 2. Presentar resumen de lo heredado: "Este perfil tiene X competencias técnicas, Y blandas, Z herramientas. Todo esto se hereda automáticamente."
 3. Preguntar contexto de la variación: "¿Para qué cliente, proyecto o especialidad es esta variación?"
 4. Recopilar información contextual: equipo, jefe, métricas, condiciones, herramientas adicionales
 5. Consultar `data/registro.md` y asignar código VV
-6. Generar la Variación con formato de `references/formato-perfil-core.md` (sección Variación)
+6. Generar la Variación con formato de `${CLAUDE_PLUGIN_ROOT}/skills/constructor-perfil/references/formato-perfil-core.md` (sección Variación)
 7. Validar con `validador-legal-mx`
 8. Registrar en `data/registro.md`
-9. Guardar en `data/perfiles/variaciones/SS-AA-PP-VV-titulo-slug--contexto.md`
+9. Guardar en `data/sectores/<SS-slug>/areas/<AA-slug>/perfiles/variaciones/PP-VV-titulo-slug--contexto.md`
