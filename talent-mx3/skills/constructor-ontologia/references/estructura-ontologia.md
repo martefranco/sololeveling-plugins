@@ -80,6 +80,7 @@ El contenido del área se guarda en el archivo `area.md` dentro del directorio d
 
 ```markdown
 # [Nombre del Área Funcional]
+<!-- REGLA: Un área = un dominio funcional. Ver sección "Regla de granularidad de áreas" abajo. -->
 
 ## Roles típicos
 
@@ -93,6 +94,17 @@ El contenido del área se guarda en el archivo `area.md` dentro del directorio d
 ### [Rol 2]
 ...
 ```
+
+## Regla de granularidad de áreas
+
+Cada carpeta de área funcional representa EXACTAMENTE un dominio funcional. Nunca se deben fusionar dominios en una sola área.
+
+- **Correcto:** `ventas/`, `marketing/`, `servicio-al-cliente/` (tres carpetas separadas)
+- **Incorrecto:** `ventas-marketing-y-servicio/` (un dominio fusionado — rechazar)
+
+Si un nombre de área contiene conjunciones (`y`, `e`, `,`, `/`) que sugieren múltiples dominios, dividir en áreas separadas — una por dominio.
+
+Esta regla es el contrato canónico que todos los skills del plugin deben respetar. Referencia obligatoria para `constructor-ontologia`, `enriquecedor-ontologia` y `constructor-perfil`.
 
 ## Regla de clasificación
 

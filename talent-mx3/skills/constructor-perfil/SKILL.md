@@ -87,7 +87,10 @@ Después de recopilar información, leer `${CLAUDE_PLUGIN_ROOT}/skills/construct
 Leer `${CLAUDE_PLUGIN_ROOT}/skills/constructor-perfil/references/reglas-nomenclatura.md` para asignar códigos SS-AA-PP (y VV si aplica).
 
 1. Consultar `data/registro.md` para obtener códigos de sector y área
-2. Si el sector o área no existe → asignar siguiente código, registrar
+2. Si el sector o área no existe → antes de asignar el código, validar la granularidad del nombre del área:
+   - Si el nombre del área ya existe en `data/registro.md` → proceder sin validación (área previamente aprobada).
+   - Si el área es nueva y el nombre contiene conjunciones (`y`, `e`, `,`, `/`) que sugieran dominios fusionados → pausar, mostrar la regla de granularidad de `${CLAUDE_PLUGIN_ROOT}/skills/constructor-ontologia/references/estructura-ontologia.md`, y pedir al usuario que confirme o divida el nombre antes de registrar.
+   - Si el área es nueva y el nombre representa un único dominio → asignar siguiente código y registrar normalmente.
 3. Asignar código PP al nuevo Core
 4. Si se genera Variación → asignar código VV
 5. Actualizar `data/registro.md` con todos los códigos asignados

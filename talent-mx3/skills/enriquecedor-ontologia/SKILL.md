@@ -36,7 +36,10 @@ Se ejecuta en paralelo durante `constructor-perfil`. Al detectar que el usuario 
 
 5. Actualizar `data/indice.md` con la nueva entrada
 
-6. **Si se detecta un área funcional nueva:** asignar código AA consultando `data/registro.md`, registrar el nuevo código
+6. **Si se detecta un área funcional nueva:** antes de asignar el código AA, validar la granularidad del nombre:
+   - Verificar que el nombre no contenga conjunciones (`y`, `e`, `,`, `/`) que sugieran dominios fusionados, conforme a la regla de granularidad en `${CLAUDE_PLUGIN_ROOT}/skills/constructor-ontologia/references/estructura-ontologia.md`.
+   - Si el nombre está limpio (un solo dominio) → asignar código AA consultando `data/registro.md` y registrar el nuevo código normalmente.
+   - Si el nombre sugiere dominios fusionados → NO crear la carpeta fusionada; registrar la nota `Área pendiente de separación: [nombre propuesto]` al final del perfil generado en una sección `## Notas de ontología`; proponer nombres de áreas separadas al usuario al final del flujo del Intake Meeting.
 
 7. Notificar sin interrumpir: mensaje breve tipo "Agregué [elemento] a la base de conocimiento en [ubicación]"
 

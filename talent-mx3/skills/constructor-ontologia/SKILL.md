@@ -70,6 +70,10 @@ Agrupar 2-3 secciones por turno de conversación para no saturar al usuario.
 
 **REGLA CRÍTICA**: ACUMULAR toda la información en memoria. NO escribir ningún archivo en este paso.
 
+### A.3.5 — Revisión de taxonomía de áreas
+
+Leer y ejecutar el protocolo en `${CLAUDE_PLUGIN_ROOT}/skills/constructor-ontologia/references/taxonomia-granularidad.md`. NO avanzar a A.4 hasta que el usuario confirme la lista de áreas validada.
+
 ### A.4 — Construir primera área funcional
 
 Preguntar: "¿Cuál es el área funcional más representativa de tu operación? Es donde más contratas o donde más necesitas perfiles."
@@ -154,6 +158,8 @@ Para una **nueva industria**:
 - ¿Qué certificaciones o normativas aplican?
 - ¿Cuáles son los retos de contratación del sector?
 - ¿Cuál es la concentración geográfica en México?
+
+Antes de continuar al paso 4, leer y ejecutar el protocolo de validación en `${CLAUDE_PLUGIN_ROOT}/skills/constructor-ontologia/references/taxonomia-granularidad.md`.
 
 Para **enriquecer** un sector existente:
 - Verificar qué ya existe leyendo `data/indice.md`
