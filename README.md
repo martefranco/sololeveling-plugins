@@ -1,6 +1,6 @@
 # SoloLeveling Plugins
 
-Marketplace de plugins para Claude Code / Cowork por **Mainbit**.
+Marketplace de plugins para Claude Code / Cowork por **MarteFranco**.
 Agentes especializados que convierten conversaciones en flujos de trabajo de reclutamiento estructurados.
 
 ---
@@ -9,7 +9,7 @@ Agentes especializados que convierten conversaciones en flujos de trabajo de rec
 
 | Plugin | Versión | Descripción |
 |--------|---------|-------------|
-| **talent-mx3** | 4.0.0 | Pipeline completo de Talent Acquisition para México: Intake → Perfiles → Variaciones → Ofertas → Evaluaciones |
+| **talent-mx3** | 4.1.0 | Pipeline completo de Talent Acquisition para México: Intake → Perfiles → Variaciones → Ofertas → Evaluaciones |
 
 ---
 
@@ -45,7 +45,8 @@ Valida posiciones contra LFT, NOM-035 y lineamientos STPS. Incluye benchmark sal
 
 | Versión | Cambios |
 |---------|---------|
-| **4.0.0** | Jerarquía unificada de datos — modelo canónico compartido entre todas las skills |
+| **4.1.0** | Enforcement de granularidad de áreas — regla "un área = un dominio funcional" con validación en todas las skills |
+| 4.0.0 | Jerarquía unificada de datos — modelo canónico compartido entre todas las skills |
 | 3.1.0 | Inicialización agnóstica de industria |
 | 3.0.0 | Release inicial marketplace |
 
@@ -53,4 +54,4 @@ Valida posiciones contra LFT, NOM-035 y lineamientos STPS. Incluye benchmark sal
 
 ## Licencia
 
-Propiedad de **Mainbit**. Todos los derechos reservados.
+Propiedad de **MarteFranco**. Todos los derechos reservados.

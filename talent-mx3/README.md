@@ -1,4 +1,4 @@
-# talent-mx3 ![v4.0.0](https://img.shields.io/badge/version-4.0.0-blue)
+# talent-mx3 ![v4.1.0](https://img.shields.io/badge/version-4.1.0-blue)
 
 > Sistema de Talent Acquisition potenciado por IA para el mercado mexicano.
 
@@ -106,6 +106,15 @@ Todos los perfiles y ofertas se validan automáticamente contra:
 
 ---
 
+## 🆕 Novedades en v4.1.0
+
+- **Granularidad de áreas** — nueva regla canónica: un área = un dominio funcional. Prohíbe fusionar dominios (ej. "Ventas y Marketing") en una sola carpeta
+- **Protocolo de taxonomía** — paso de validación obligatorio antes de crear carpetas de área en `/poblar-ontologia` (Modos A y B)
+- **Guard clauses** — `enriquecedor-ontologia` y `constructor-perfil` validan nombres de área antes de registrar códigos AA
+- **Referencia extraída** — `references/taxonomia-granularidad.md` con protocolo de 5 pasos reutilizable
+
+---
+
 ## 🆕 Novedades en v4.0.0
 
 - **Jerarquía unificada** — se elimina la separación `ontologia/` / `perfiles/`; todo vive en un único árbol `sectores/`
@@ -125,4 +134,4 @@ Para sincronizar la ontología entre sesiones y compartirla con tu equipo, confi
 
 ## Autor
 
-Creado por **Mainbit** — notificacionesbot@mainbit.com.mx
+Creado por **MarteFranco** — martn00@hotmail.com
